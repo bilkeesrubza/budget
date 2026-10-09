@@ -1,38 +1,162 @@
+/* Main page */
 .App {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #25253a;
+}
+
+/* Main title area */
+.App-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #5b4bdb;
+}
+
+.App-header p {
+  color: #777;
+  margin-top: 8px;
+}
+
+/* Form */
+form {
+  max-width: 850px;
+  margin: 0 auto 20px;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* Inputs and select */
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  background: white;
+}
+
+input:focus,
+select:focus {
+  border-color: #5b4bdb;
+}
+
+/* Add button */
+form button {
+  grid-column: 1 / -1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #5b4bdb;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #4939c5;
+}
+
+/* Search and filter */
+.App > input,
+.App > select {
+  max-width: 415px;
+  margin-bottom: 20px;
+}
+
+.App > input {
+  margin-left: calc(50% - 425px);
+  margin-right: 10px;
+}
+
+.App > select {
+  margin-left: 10px;
+}
+
+/* Expense list */
+.App > div:last-child {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Expense item */
+.expense-item {
+  background: white;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Expense text */
+.expense-item h3 {
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.expense-item p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Delete button */
+.expense-item button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #ffe5e5;
+  color: #d33;
+  cursor: pointer;
+}
+
+.expense-item button:hover {
+  background: #ffd0d0;
+}
+
+/* Total */
+.total-expenses {
+  background: #5b4bdb;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 14px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.total-expenses h2 {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Mobile */
+@media (max-width: 700px) {
+  form {
+    grid-template-columns: 1fr;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .App > input,
+  .App > select {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 12px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App {
+    padding: 25px 15px;
   }
 }
