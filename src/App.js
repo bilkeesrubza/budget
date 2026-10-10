@@ -9,19 +9,23 @@ function App() {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('');
   const [showAddPage, setShowAddPage] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const addExpense = (newExpense) => {
     setExpenses((prevExpenses) => [...prevExpenses, newExpense]);
   };
+
   const deleteExpense = (id) => {
     setExpenses((prevExpenses) =>
       prevExpenses.filter((expense) => expense.id !== id)
     );
   };
+
   const filteredExpenses = expenses.filter(
     (expense) =>
       expense.title.toLowerCase().includes(search.toLowerCase()) &&
       (filter === '' || expense.category === filter)
   );
+
   const totalExpenses = filteredExpenses.reduce(
     (total, expense) => total + Number(expense.amount),
     0
@@ -34,12 +38,15 @@ function App() {
           setShowAddPage(false);
         }}
         goBack={() => setShowAddPage(false)}
+        darkMode={darkMode}
+        toggleDarkMode={() => setDarkMode(!darkMode)} 
       />
     );
   }
   return (
-    <div className="App">
+    <div className={darkMode ? 'App dark-mode' : 'App'  }>
       <header className="App-header">
+
         <div className="brand">
           <div className="brand-icon">₹</div>
           <div>
@@ -47,6 +54,12 @@ function App() {
             <p>Your money, managed better.</p>
           </div>
         </div>
+        <button
+          className="theme-toggle"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
         <div className="welcome-text">
           <p>Welcome back 👋</p>
           <h2>Track your spending with ease.</h2>

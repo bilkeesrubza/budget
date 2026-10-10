@@ -565,3 +565,134 @@ form button:hover {
     font-size: 10px;
   }
 }
+/* Theme toggle button */
+.theme-toggle {
+  display: block;
+  margin: 18px 0;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #163d2a;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #e8f5eb;
+}
+
+/* Smooth theme transition */
+.App,
+.App-header,
+.dashboard,
+.summary-card,
+.expense-item,
+.filter-bar input,
+.filter-bar select,
+form,
+.expense-total-card,
+.empty-state {
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Dark theme */
+.App.dark-mode {
+  background: #111827;
+  color: #f3f4f6;
+  min-height: 100vh;
+}
+
+.dark-mode .App-header {
+  background: linear-gradient(135deg, #0b1711, #183d2a);
+}
+
+.dark-mode .dashboard {
+  background: #111827;
+}
+
+.dark-mode .welcome-text h2,
+.dark-mode .brand h1 {
+  color: #ffffff;
+}
+
+.dark-mode .summary-card,
+.dark-mode .expense-item,
+.dark-mode .empty-state,
+.dark-mode form {
+  background: #1f2937;
+  border-color: #374151;
+  box-shadow: none;
+}
+
+.dark-mode .summary-card h3,
+.dark-mode .section-heading h2,
+.dark-mode .expense-details h3,
+.dark-mode .expense-amount,
+.dark-mode .empty-state h2 {
+  color: #f9fafb;
+}
+
+.dark-mode .summary-card p,
+.dark-mode .section-heading p,
+.dark-mode .expense-details p,
+.dark-mode .empty-state p {
+  color: #cbd5e1;
+}
+
+.dark-mode .filter-bar input,
+.dark-mode .filter-bar select,
+.dark-mode form input,
+.dark-mode form select {
+  background: #111827;
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+.dark-mode .filter-bar input::placeholder,
+.dark-mode form input::placeholder {
+  color: #9ca3af;
+}
+
+.dark-mode form label {
+  color: #e5e7eb;
+}
+
+.dark-mode .expense-total-card {
+  background: #173b29;
+  border-color: #285b3d;
+}
+
+.dark-mode .expense-total-card p,
+.dark-mode .expense-total-card h2 {
+  color: #dcfce7;
+}
+
+.dark-mode .expense-total-card span {
+  color: #bbf7d0;
+}
+
+.dark-mode .expense-category-icon {
+  background: #334b3b;
+}
+
+.dark-mode .back-button,
+.dark-mode .theme-toggle {
+  background: #273449;
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+.dark-mode .back-button:hover,
+.dark-mode .theme-toggle:hover {
+  background: #374151;
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+  .theme-toggle {
+    margin: 16px 0;
+  }
+}

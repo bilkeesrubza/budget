@@ -1,9 +1,12 @@
 import React from 'react';
 import ExpenseForm from './components/ExpenseForm';
 
-function AddExpensePage({ addExpense, goBack }) {
+function AddExpensePage({ addExpense, goBack , darkMode, toggleDarkMode}) {
   return (
-    <div className="add-expense-page">
+    <div className={darkMode ? 'add-expense-page dark-mode' : 'add-expense-page' }>
+      <button className="theme-toggle" onClick={toggleDarkMode}>
+        {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+      </button>
       <button onClick={goBack} className="back-button">
         ← Back to Dashboard
       </button>
